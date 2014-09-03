@@ -7,7 +7,9 @@ public class Main {
 
     public static int maxContiguousSubArraySum(String[] numbersStr) {
         int maxSumIdx=0; //max Sum till the index
-        int maxSum=0;
+        int maxSum=Integer.MIN_VALUE; // if set to 0 , 
+                                      //code will fail for -ve max sum
+                                      // will give 0
         int len = numbersStr.length;
         int[] numbers=new int[len];
 
@@ -19,6 +21,7 @@ public class Main {
 
             maxSumIdx=Math.max(maxSumIdx+numbers[i],numbers[i]);
             
+
             if(maxSum < maxSumIdx) {
                  maxSum = maxSumIdx;
             }
