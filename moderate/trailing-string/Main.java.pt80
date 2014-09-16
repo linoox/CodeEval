@@ -1,0 +1,57 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+
+
+public class Main {
+
+    //TODO: fix this implementation
+    // result: partial 80
+
+    public static int hasTrailingString(String original, String substr) {
+
+        String[] originalArray = original.split("\\s");
+        String[] substrArray = substr.split("\\s");
+
+        int orgStrlen = originalArray.length;
+        int i;
+
+        for (i=substrArray.length-1; i>=0;i--) {
+            
+            if(!originalArray[orgStrlen-1].equals(substrArray[i]))
+                return 0;
+            else {
+                orgStrlen--;
+            }
+        }
+
+         if (i < 0) {
+            return 1;
+         } else {
+            return 0;
+         }
+
+    }
+
+	public static void main (String[] args) {
+
+        try {
+            File file = new File(args[0]);
+            BufferedReader in = new BufferedReader(new FileReader(file));
+            String line;
+            while ((line = in.readLine()) != null) {
+                String[] lineArray = line.split(",");
+                if (lineArray.length > 0) {
+
+                    System.out.println(hasTrailingString(lineArray[0],lineArray[1]));
+
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("File Read Error: " + e.getMessage());
+        }
+	}
+}
+
