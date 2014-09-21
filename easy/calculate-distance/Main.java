@@ -7,24 +7,26 @@ import java.util.Arrays;
 
 public class Main {
 
-    static double calculateDistance(String input) {
-        int i=0;
-        int j=0;  
-        double distance=0;
-        int[] points = new int[4];
-       
-        String[] num = input.split("\\[(,)]");
 
-        System.out.println("input:"+Arrays.toString(num));
+    // todo: not a good thing to have casts in program.
+    // (int) distance
+    static int calculateDistance(String input) {
+        int numPoints=4;
+        int[] points = new int[numPoints];
+        String delims = "[\\(,\\)\\s]+";
+        String[] strParts = input.split(delims);
         
-        /*  
-        System.out.println("arr:"+Arrays.toString(points)); 
+        for (int i=1;i<=numPoints;i++) {
+            points[i-1] = Integer.parseInt(input.split(delims)[i]);    
+        }
+
+        // System.out.println("points:"+Arrays.toString(points));
+        
         double distance = Math.sqrt(
               Math.pow((points[0] - points[2]),2)  
             + Math.pow((points[1] - points[3]),2));
 
-        */
-        return distance;
+        return (int)distance;
         
     }
 
