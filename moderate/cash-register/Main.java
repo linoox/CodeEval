@@ -6,6 +6,7 @@ import java.text.DecimalFormat;
 
 public class Main {
 
+    // todo: seems to be failing for some cases
     public static void change(Double purchasePrice, Double cash) {
 
         Double[] currencyMap = new Double[]{100.0,50.0,20.0,10.0,5.0,2.0,1.0,0.50,0.25,0.10,0.05,0.01};
