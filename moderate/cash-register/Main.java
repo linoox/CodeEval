@@ -22,11 +22,13 @@ public class Main {
 
         if(purchasePrice > cash) {
             System.out.print("ERROR");
+            
         }
 
 
         if(Math.abs(purchasePrice - cash) < EPSILON) {
             System.out.print("ZERO");
+            
         }
 
         cash = Double.valueOf(df.format(cash - purchasePrice));
@@ -42,7 +44,7 @@ public class Main {
                 continue;
             }
 
-            cash  = Double.valueOf(df.format(cash % currency)); 
+            cash  = Double.valueOf(df.format(cash - currency)); 
 
             cash1  = Double.valueOf(df.format(cash / currency)); 
 
