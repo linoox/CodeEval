@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class Main {
 
-
+    // todo: only 85% cases passed.
     static boolean overlappingRectangles(int[] points) {
         int rectA_UL_x = points[0];
         int rectA_UL_y = points[1];
