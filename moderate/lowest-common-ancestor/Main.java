@@ -7,6 +7,9 @@ import java.util.Arrays;
 
 public class Main {
 
+    //todo: too less score on codeeval :(
+    // seems this has v high memory usage
+
     private Node root;
 
     private static class Node {
